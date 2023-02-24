@@ -1,0 +1,15 @@
+.pokemonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pokemonContainer p {
+  margin: 10px;
+  padding: 12px;
+  background-color: var(--dark1);
+  color: var(--light1);
+  border-radius: 7px;
+  font-size: 1.2em;
+  text-transform: capitalize;
+}

@@ -1,0 +1,6 @@
+<h2>Pokedex</h2>
+<app-poke-search [(input)]="pokemonSearchFilter"></app-poke-search>
+{{pokemonSearchFilter}}
+<section class="pokemonContainer">
+  <p *ngFor="let p of (pokemons | filterByName:pokemonSearchFilter) " [routerLink]="['/pokedex',p.name]">{{p.name}}</p>
+</section>

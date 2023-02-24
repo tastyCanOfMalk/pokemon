@@ -1,0 +1,49 @@
+<div *ngIf="pokemon$ | async as p; else loading" class="main">
+  <h1>{{ p.name | titlecase }}</h1>
+  <section class="mainInfo">
+    <div>
+      <p>Base Experience</p>
+      <p>{{ p.base_experience }}</p>
+    </div>
+    <div>
+      <p>Height</p>
+      <p>{{ p.height }} decimeters</p>
+    </div>
+    <div>
+      <p>Weight</p>
+      <p>{{ p.weight }} hectograms</p>
+    </div>
+  </section>
+  <section class="sprites">
+    <app-pokemon-sprites [sprites]="p.sprites"></app-pokemon-sprites>
+  </section>
+  <section class="abilities">
+    <h3>Abilities</h3>
+    <ol>
+      <li *ngFor="let ability of p.abilities"><span *ngIf="!ability.is_hidden">{{ability.ability.name |
+          titlecase}}</span></li>
+    </ol>
+  </section>
+  <section class="stats">
+    <h3>Stats</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Effort</th>
+          <th>Base stat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>name</td>
+          <td>effort</td>
+          <td>base_stat</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+<ng-template #loading>
+  <h1>Loading ...</h1>
+</ng-template>

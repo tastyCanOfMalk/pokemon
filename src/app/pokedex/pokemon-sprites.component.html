@@ -1,0 +1,6 @@
+<div>
+  <figure *ngFor="let sprite of sprites | keyvalue ">
+    <img [src]="sprite.value" [alt]="sprite.key" />
+    <figcaption>{{ sprite.key }}</figcaption>
+  </figure>
+</div>

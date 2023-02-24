@@ -1,0 +1,56 @@
+div.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "title title"
+    "main main"
+    "sprites sprites"
+    "abilities stats";
+}
+
+div.main>section {
+  border: 1px solid var(--dark2);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--light2);
+}
+
+h1 {
+  grid-area: title;
+  text-align: center;
+}
+
+.mainInfo {
+  grid-area: main;
+  display: flex;
+  justify-content: space-around;
+}
+
+.mainInfo>div>p {
+  text-align: center;
+
+}
+
+.mainInfo>div>p {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.mainInfo>div>p:first-child {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--dark2);
+  border-bottom: 1px solid var(--dark2);
+}
+
+.sprites {
+  grid-area: sprites;
+}
+
+.stats {
+  grid-area: stats;
+}
+
+.abilities {
+  grid-area: abilities;
+}

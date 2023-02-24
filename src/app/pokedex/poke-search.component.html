@@ -1,0 +1,6 @@
+<label for="searchBox">Which Pokemon do you want to see?</label>
+<form [formGroup]="fg">
+  <input id="searchBox" formControlName="searchBoxInput" (input)="setInput()" autocomplete="off" />
+</form>
+<p *ngIf="fg.controls['searchBoxInput'].errors?.['pattern']">Only characters are allowed</p>
+<div *ngIf="fg.value.searchBoxInput">You're looking for {{fg.value.searchBoxInput}}</div>
